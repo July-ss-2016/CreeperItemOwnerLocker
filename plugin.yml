@@ -1,0 +1,8 @@
+name: CreeperItemOwnerLocker
+main: vip.creeper.mcserverplugins.creeperitemownerlocker.CreeperItemOwnerLocker
+author: July_ss
+version: 1.0.0
+depend: [Essentials, Vault]
+commands:
+  ciol:
+    aliases: [clio]
