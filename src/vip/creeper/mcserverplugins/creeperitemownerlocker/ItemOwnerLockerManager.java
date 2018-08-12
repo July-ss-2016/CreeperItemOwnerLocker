@@ -1,6 +1,7 @@
-package vip.creeper.mcserverplugins.creeperitemownerlocker.managers;
+package vip.creeper.mcserverplugins.creeperitemownerlocker;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import vip.creeper.mcserverplugins.creeperitemownerlocker.Util;
@@ -121,5 +122,11 @@ public class ItemOwnerLockerManager {
         }
 
         return false;
+    }
+
+    public boolean canUse(String comparedOwnerName, ItemStack item) {
+        String owner = getOwner(item);
+
+        return owner == null || owner.equalsIgnoreCase(comparedOwnerName);
     }
 }

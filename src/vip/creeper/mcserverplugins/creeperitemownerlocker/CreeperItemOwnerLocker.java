@@ -1,13 +1,12 @@
 package vip.creeper.mcserverplugins.creeperitemownerlocker;
 
-import net.milkbowl.vault.Vault;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import vip.creeper.mcserverplugins.creeperitemownerlocker.managers.CmdConfirmManager;
-import vip.creeper.mcserverplugins.creeperitemownerlocker.managers.ItemOwnerLockerManager;
+
+import java.io.File;
 
 /**
  * Created by July on 2018/02/22.
@@ -24,6 +23,13 @@ public class CreeperItemOwnerLocker extends JavaPlugin {
         this.settings = new Settings();
         this.cmdConfirmManager = new CmdConfirmManager();
         this.itemOwnerLockerManager = new ItemOwnerLockerManager();
+        File logFolder = new File(getDataFolder().getAbsolutePath() + File.separator + "logs");
+
+        if (!logFolder.exists() && !logFolder.mkdirs()) {
+            getLogger().warning("创建 日志文件夹 失败!");
+            setEnabled(false);
+            return;
+        }
 
         loadConfig();
 
@@ -63,11 +69,11 @@ public class CreeperItemOwnerLocker extends JavaPlugin {
         settings.setCostMoney(config.getInt("cost_money"));
     }
 
-    public Economy getVault() {
+    Economy getVault() {
         return vault;
     }
 
-    public Settings getSettings() {
+    Settings getSettings() {
         return settings;
     }
 
@@ -79,7 +85,7 @@ public class CreeperItemOwnerLocker extends JavaPlugin {
         return itemOwnerLockerManager;
     }
 
-    public CmdConfirmManager getCmdConfirmManager() {
+    CmdConfirmManager getCmdConfirmManager() {
         return cmdConfirmManager;
     }
 }

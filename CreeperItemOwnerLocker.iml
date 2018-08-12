@@ -10,21 +10,21 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/spigot/spigot.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/plugins/Vault.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/spigot/spigot.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/plugins/Vault.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/spigot/spigot-latest.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../../java_api/minecraft/spigot/spigot-latest.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
